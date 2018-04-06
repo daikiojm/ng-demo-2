@@ -1,5 +1,9 @@
 export interface Address {
-  address1: string;
-  address2: string;
-  address3: string;
+  data: {
+    pref: string,
+    address: string,
+    city: string,
+    town: string,
+    fullAddress: string,
+  };
 }

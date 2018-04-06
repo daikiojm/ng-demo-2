@@ -19,6 +19,7 @@ export class SearchFormComponent implements OnInit {
   onClickFetchAddress() {
     this.addressApiService.fetchAddress(this.postCode)
     .subscribe((res) => {
+      console.log(res);
       this.addressData = res.data.fullAddress;
     });
   }
