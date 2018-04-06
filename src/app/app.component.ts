@@ -12,11 +12,5 @@ export class AppComponent {
   title = 'postcode finder';
   constructor(private addressApiService: AddressApiService) {}
 
-  ngOninit() {
-    // this.addressApiService.fetchAddress();
-  }
-
-  onClickFetchAddress() {
-    console.log('!!!!!!!!!!!!!!!!!!!');
-  }
+  ngOninit() { }
 }

@@ -10,6 +10,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { AddressApiService } from './services/address-api.service';
 import { AppRoutingModule } from './/app-routing.module';
+import { TopPegeMessageComponent } from './components/top-pege-message/top-pege-message.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './/app-routing.module';
     ToolbarComponent,
     TopMessageComponent,
     SearchFormComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    TopPegeMessageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { TopPegeMessageComponent } from './components/top-pege-message/top-pege-message.component';
+
+const routes: Routes = [
+  { path: '', component: TopPegeMessageComponent},
+  { path: 'search/:postcod/:address', component: SearchResultComponent},
+];
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

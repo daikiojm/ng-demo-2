@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { AddressApiService } from '../../services/address-api.service';
 
 @Component({
   selector: 'app-search-result',
@@ -6,11 +9,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./search-result.component.css']
 })
 export class SearchResultComponent implements OnInit {
-  @Input() addressData: string;
+  addressData: string;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.route.paramMap.subscribe((params) => {
+      this.addressData = params.get('address');
+    });
   }
-
 }
