@@ -9,8 +9,8 @@ import { AddressApiService } from '../../services/address-api.service';
   styleUrls: ['./search-result.component.css']
 })
 export class SearchResultComponent implements OnInit {
-  postCode;
-  addressData;
+  postCode: any;
+  addressData: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,6 +20,10 @@ export class SearchResultComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       this.postCode = params.get('postcode');
+
+      if (this.postCode.length !== 7) {
+        return this.addressData = '郵便番号は7桁で入力してください';
+      }
 
       this.api.fetchAddress(this.postCode)
       .subscribe((res) => {
