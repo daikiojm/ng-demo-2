@@ -6,7 +6,7 @@ import { TopPegeMessageComponent } from './components/top-pege-message/top-pege-
 
 const routes: Routes = [
   { path: '', component: TopPegeMessageComponent},
-  { path: 'search/:postcod/:address', component: SearchResultComponent},
+  { path: 'search/:postcode', component: SearchResultComponent},
 ];
 
 @NgModule({

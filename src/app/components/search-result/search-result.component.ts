@@ -9,15 +9,26 @@ import { AddressApiService } from '../../services/address-api.service';
   styleUrls: ['./search-result.component.css']
 })
 export class SearchResultComponent implements OnInit {
-  addressData: string;
+  postCode;
+  addressData;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private api: AddressApiService
   ) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-      this.addressData = params.get('address');
+      this.postCode = params.get('postcode');
+
+      this.api.fetchAddress(this.postCode)
+      .subscribe((res) => {
+        if (res.code === 200) {
+          this.addressData = res.data.fullAddress;
+        } else {
+          this.addressData = '該当する郵便番号は存在しません';
+        }
+      });
     });
   }
 }
