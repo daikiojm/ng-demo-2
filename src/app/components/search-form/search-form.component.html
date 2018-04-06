@@ -3,5 +3,4 @@
   <input class="search__input" type="number" [(ngModel)]="postCode" />
   <button class="search__button" (click)="onClickFetchAddress()">検索</button>
 </div>
-{{ addressData }}
-<!-- <app-search-result [data]="'hogehoge'"></app-search-result> -->
+<app-search-result *ngIf="addressData" [addressData]="addressData" ></app-search-result>

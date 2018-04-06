@@ -1,4 +1,5 @@
 export interface Address {
+  code: number;
   data: {
     pref: string,
     address: string,
