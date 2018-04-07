@@ -5,8 +5,9 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { TopPegeMessageComponent } from './components/top-pege-message/top-pege-message.component';
 
 const routes: Routes = [
-  { path: '', component: TopPegeMessageComponent},
-  { path: 'search/:postcode', component: SearchResultComponent},
+  { path: '', component: TopPegeMessageComponent },
+  { path: 'search', redirectTo: '' },
+  { path: 'search/:postcode', component: SearchResultComponent },
 ];
 
 @NgModule({
